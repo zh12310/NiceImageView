@@ -154,6 +154,7 @@ public class NiceImageView extends AppCompatImageView {
             // 计算tempPath和path的差集
             srcPath.op(path, Path.Op.DIFFERENCE);
             canvas.drawPath(srcPath, paint);
+            srcPath.reset();//解决9.0及以上系统图片一次圆一次方的问题
         }
         paint.setXfermode(null);
 
